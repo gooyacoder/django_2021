@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def projects(request):
-    return HttpResponse('Projects Page')
+    return render(request, 'projects.html')
 
 def project(request, pk):
-    return HttpResponse('Project Page' + ' ' + str(pk))
+    return render(request, 'single-project.html')
