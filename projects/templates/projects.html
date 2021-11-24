@@ -5,8 +5,8 @@
 <h1>Projects</h1>
     <table>
     <tr>
-        <th style="width: 400px; text-align: left">ID</th>
-        <th style="width: 200px; text-align: left">Title</th>
+
+        <th style="width: 400px; text-align: left">Title</th>
         <th style="width: 100px; text-align: left">Vote</th>
         <th style="width: 100px; text-align: left">Ratio</th>
         <th style="width: 200px; text-align: left">Created</th>
@@ -14,12 +14,14 @@
     </tr>
     {% for project in projects %}
         <tr>
-            <td style="width: 400px">{{ project.id }}</td>
-            <td style="width: 200px">{{ project.title }}</td>
+
+            <td style="width: 400px">{{ project.title }}</td>
             <td style="width: 100px">{{ project.vote_total }}</td>
             <td style="width: 100px">{{ project.vote_ratio }}</td>
             <td style="width: 200px">{{ project.created }}</td>
-            <td style="width: 100px"><a href="{% url 'project' project.id %}">View</a></td>
+            <td style="width: 200px"><a href="{% url 'project' project.id %}" style="padding-right: 20px">View</a>
+                <a href="{% url 'update-project' project.id %}" style="padding-right: 20px">Edit</a>
+                <a href="{% url 'delete-project' project.id %}" style="padding-right: 20px">Delete</a></td>
         </tr>
     {% endfor %}
     </table>
